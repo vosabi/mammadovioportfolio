@@ -2,7 +2,13 @@
 
 import { useRef, useState } from "react";
 
-export function PhotoSpotlight({ photo }: { photo: string | null }) {
+export function PhotoSpotlight({
+  photo,
+  sizeClassName = "-mt-24 h-[760px] w-[min(680px,58vw)]",
+}: {
+  photo: string | null;
+  sizeClassName?: string;
+}) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const [errored, setErrored] = useState(false);
   const hasPhoto = !!photo && !errored;
@@ -29,7 +35,7 @@ export function PhotoSpotlight({ photo }: { photo: string | null }) {
     <div
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      className="relative z-[2] -mt-24 h-[760px] w-[min(680px,58vw)]"
+      className={`relative z-[2] ${sizeClassName}`}
     >
       <div className={`relative h-full w-full overflow-hidden rounded-[18px] ${hasPhoto ? "" : "bg-card"}`}>
         {hasPhoto ? (
