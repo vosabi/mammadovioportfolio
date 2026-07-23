@@ -1,0 +1,104 @@
+{
+  "availableForWork": true,
+  "fullName": "Sənan Məmmədov",
+  "hero": {
+    "titleAz": "AI Developer",
+    "titleEn": "AI Developer",
+    "descAz": "Süni intellektlə real biznes problemlərini həll edən alətlər qururam.",
+    "descEn": "I build tools that solve real business problems with AI.",
+    "photo": "/uploads/07275993-bce2-4af1-a790-1b723d748f55.png"
+  },
+  "social": {
+    "github": "#",
+    "linkedin": "#",
+    "email": "sanan.mammadov@gmail.com"
+  },
+  "services": [
+    {
+      "titleAz": "AI AVTOMATLAŞDIRMA",
+      "titleEn": "AI AUTOMATION",
+      "descAz": "Saatlarla vaxt aparan biznes proseslərini AI ilə avtomatlaşdırıram — mesaj göndərişləri, hesabatlar, təkrarlanan işlər.",
+      "descEn": "I automate time-consuming business processes with AI — message campaigns, reports, repetitive work."
+    },
+    {
+      "titleAz": "CHATBOT & AGENTLƏR",
+      "titleEn": "CHATBOTS & AGENTS",
+      "descAz": "WhatsApp, Telegram və veb üçün müştərilərlə danışan, sual cavablandıran ağıllı botlar və AI agentlər.",
+      "descEn": "Smart bots and AI agents for WhatsApp, Telegram and web that talk to customers and answer questions."
+    },
+    {
+      "titleAz": "DATA & HESABAT",
+      "titleEn": "DATA & REPORTING",
+      "descAz": "Reklam və satış datasını avtomatik toplayıb anlaşılan dashboard və hesabatlara çevirirəm.",
+      "descEn": "I automatically collect ad and sales data and turn it into clear dashboards and reports."
+    },
+    {
+      "titleAz": "ERP–CRM SİSTEMLƏRİ",
+      "titleEn": "ERP–CRM SYSTEMS",
+      "descAz": "Satış, anbar və müştəri münasibətlərini bir yerdə idarə edən fərdi biznes sistemləri.",
+      "descEn": "Custom business systems that manage sales, inventory and customer relationships in one place."
+    }
+  ],
+  "projects": [
+    {
+      "titleAz": "WhatsApp Toplu Mesaj — Avtomatlaşdırma Aləti",
+      "titleEn": "WhatsApp Bulk Messaging — Automation Tool",
+      "tags": [
+        "WhatsApp API",
+        "Automation"
+      ],
+      "image": null,
+      "full": false
+    },
+    {
+      "titleAz": "Meta Reporting — Reklam Hesabat Sistemi",
+      "titleEn": "Meta Reporting — Ad Reporting System",
+      "tags": [
+        "Meta Ads API",
+        "Dashboard"
+      ],
+      "image": null,
+      "full": false
+    },
+    {
+      "titleAz": "ERP–CRM — Biznes İdarəetmə Sistemi",
+      "titleEn": "ERP–CRM — Business Management System",
+      "tags": [
+        "ERP",
+        "CRM",
+        "Full-stack"
+      ],
+      "image": null,
+      "full": true
+    }
+  ],
+  "experience": [
+    {
+      "company": "Freelance",
+      "role": "AI Developer",
+      "dateAz": "2024 — İndi",
+      "dateEn": "2024 — Now",
+      "current": true
+    },
+    {
+      "company": "166 Yükdaşıma və Logistika",
+      "role": "",
+      "dateAz": "",
+      "dateEn": "",
+      "current": false
+    },
+    {
+      "company": "",
+      "role": "",
+      "dateAz": "",
+      "dateEn": "",
+      "current": false
+    }
+  ],
+  "contact": {
+    "headingAz": "BİR LAYİHƏ FİKRİNİZ VAR?",
+    "headingEn": "HAVE A PROJECT IN MIND?",
+    "descAz": "Birlikdə vaxtınıza qənaət edən, real nəticə verən bir alət qura bilərik. Fikrinizi yazın — ən qısa zamanda cavablayıram.",
+    "descEn": "Together we can build a tool that saves your time and delivers real results. Write me your idea — I reply quickly."
+  }
+}
