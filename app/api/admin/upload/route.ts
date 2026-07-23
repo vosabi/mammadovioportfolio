@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { writeFile } from "node:fs/promises";
+import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
+import { UPLOADS_DIR } from "@/lib/content";
 
 const ALLOWED: Record<string, string> = {
   "image/jpeg": "jpg",
@@ -31,8 +32,8 @@ export async function POST(request: Request) {
 
   const bytes = Buffer.from(await file.arrayBuffer());
   const filename = `${crypto.randomUUID()}.${ext}`;
-  const filePath = path.join(process.cwd(), "public", "uploads", filename);
-  await writeFile(filePath, bytes);
+  await mkdir(UPLOADS_DIR, { recursive: true });
+  await writeFile(path.join(UPLOADS_DIR, filename), bytes);
 
-  return NextResponse.json({ url: `/uploads/${filename}` });
+  return NextResponse.json({ url: `/api/uploads/${filename}` });
 }

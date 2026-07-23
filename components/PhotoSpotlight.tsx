@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 
 export function PhotoSpotlight({ photo }: { photo: string | null }) {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -34,13 +33,11 @@ export function PhotoSpotlight({ photo }: { photo: string | null }) {
     >
       <div className={`relative h-full w-full overflow-hidden rounded-[18px] ${hasPhoto ? "" : "bg-card"}`}>
         {hasPhoto ? (
-          <Image
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
             src={photo}
             alt=""
-            fill
-            sizes="(max-width: 640px) 90vw, 680px"
-            className="object-cover object-top"
-            priority
+            className="h-full w-full object-cover object-top"
             onError={() => setErrored(true)}
           />
         ) : (

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useT } from "@/lib/lang-context";
 import { Container } from "./Container";
 import type { SiteContent } from "@/lib/content";
@@ -32,12 +31,11 @@ export function Work({ content }: { content: SiteContent }) {
               } ${p.image ? "" : "flex items-center justify-center border border-dashed border-card-border bg-white/40 text-center text-sm text-ink-tertiary"}`}
             >
               {p.image ? (
-                <Image
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
                   src={p.image}
                   alt={t(p.titleAz, p.titleEn)}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover"
+                  className="h-full w-full object-cover"
                 />
               ) : (
                 t("Şəkil admin paneldən əlavə edilə bilər", "Image can be added from admin panel")

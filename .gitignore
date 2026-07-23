@@ -37,9 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# uploaded content (admin panel)
-/public/uploads/*
-!/public/uploads/.gitkeep
+# uploaded content (admin panel) — served via /api/uploads, not the public folder
+/data/uploads/*
+!/data/uploads/.gitkeep
 
 # typescript
 *.tsbuildinfo
