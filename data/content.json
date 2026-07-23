@@ -83,19 +83,38 @@
       ]
     },
     {
-      "slug": "meta-reporting",
+      "slug": "meta-ads-reporting",
       "titleAz": "Meta Reporting — Reklam Hesabat Sistemi",
       "titleEn": "Meta Reporting — Ad Reporting System",
       "tags": [
         "Meta Ads API",
-        "Dashboard"
+        "Dashboard",
+        "AI Chat"
       ],
       "image": null,
       "full": false,
-      "summaryAz": "",
-      "summaryEn": "",
-      "detailsAz": [],
-      "detailsEn": []
+      "summaryAz": "Əmlak satışı sektorunda çalışan bir müştəri üçün hazırladığım idarəetmə paneli — reklam performansını, ödəniş qəbzlərini və satış nəticələrini bir yerdə göstərir. Facebook/Instagram məlumatları Meta-nın öz API-sindən, ödəniş qəbzləri Gmail-dən, satış rəqəmləri isə komandanın doldurduğu Google Cədvəldən avtomatik çəkilir — heç kim əl ilə heç nə köçürmür.",
+      "summaryEn": "A management dashboard built for a real-estate client that brings ad performance, payment receipts, and sales results together in one place. Facebook/Instagram data comes straight from Meta's own API, payment receipts are pulled from Gmail, and sales numbers are read live from the team's Google Sheet — nobody has to copy anything by hand.",
+      "detailsAz": [
+        "Meta Marketing API-dən aylıq və platforma üzrə (Facebook, Instagram, hamısı) reklam performansı — xərc, lead, mesaj, əhatə, göstərilmə, klik, CTR, CPM, tezlik",
+        "Lead və mesaj başına xərc kimi hesablanmış göstəricilər, rəngli 'CTR effektivliyi' indikatoru ilə sadə performans qiymətləndirməsi",
+        "Son 6 ay üzrə lead, mesaj və xərc trend qrafikləri",
+        "Gmail-ə qoşulub Meta-nın ödəniş qəbzi emaillərini avtomatik oxuyan və cədvəl halında göstərən 'Ödənişlər' bölməsi",
+        "Komandanın doldurduğu Google Cədvəldən canlı oxunan 'Satış' bölməsi — kanal üzrə (Instagram, Facebook, TikTok, vebsayt) satış sayı, elan saytı kimi digital olmayan mənbə isə ayrıca izlənilir",
+        "Reklam xərci ÷ satış sayı = 'satış başına xərc' avtomatik hesablanır",
+        "Göstəricilər haqqında təbii dildə sual-cavab edən daxili AI köməkçi ('Bu ay neçə lead gəldi?' kimi) — yalnız real rəqəmlər üzərində cavab verir, uydurmaz",
+        "Parolla qorunan giriş və giriş jurnalı (kim, hansı IP-dən, nə vaxt daxil olub)"
+      ],
+      "detailsEn": [
+        "Monthly, platform-filtered (Facebook, Instagram, all) ad performance pulled from the Meta Marketing API — spend, leads, messages, reach, impressions, clicks, CTR, CPM, frequency",
+        "Calculated metrics like cost-per-lead and cost-per-message, plus a simple color-coded CTR-effectiveness indicator",
+        "6-month trend charts for leads, messages, and spend",
+        "A 'Payments' tab connected to Gmail that automatically reads Meta's billing receipt emails into a table",
+        "A 'Sales' tab reading live from the team's Google Sheet — sales counted by channel (Instagram, Facebook, TikTok, website), with the non-digital listing-site source tracked separately",
+        "Automatic 'cost per sale' calculation (ad spend ÷ number of sales)",
+        "A built-in AI assistant that answers natural-language questions about the numbers (e.g. 'How many leads this month?') — grounded strictly in the real data, no hallucinated figures",
+        "Password-protected login with an audit log (who logged in, from which IP, when)"
+      ]
     },
     {
       "slug": "erp-crm",
