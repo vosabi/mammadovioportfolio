@@ -47,6 +47,7 @@
   ],
   "projects": [
     {
+      "slug": "whatsapp-bulk-messaging",
       "titleAz": "WhatsApp Toplu Mesaj — Avtomatlaşdırma Aləti",
       "titleEn": "WhatsApp Bulk Messaging — Automation Tool",
       "tags": [
@@ -54,9 +55,26 @@
         "Automation"
       ],
       "image": null,
-      "full": false
+      "full": false,
+      "summaryAz": "Biznesin müştəri bazasına eyni anda yüzlərlə fərdiləşdirilmiş WhatsApp mesajı göndərməsini təmin edən avtomatlaşdırma aləti — əl ilə tək-tək yazmaq əvəzinə bir kampaniya bir neçə dəqiqəyə hazır olur.",
+      "summaryEn": "An automation tool that lets a business send hundreds of personalized WhatsApp messages to its customer list at once — a campaign that used to take hours of manual typing is ready in minutes.",
+      "detailsAz": [
+        "WhatsApp Business API inteqrasiyası ilə toplu mesaj göndərişi",
+        "Excel/CSV siyahısından müştəri məlumatlarının avtomatik oxunması",
+        "Mesajlarda ad, sifariş nömrəsi kimi fərdi sahələrin avtomatik doldurulması (şablon dəyişənləri)",
+        "Göndəriş sürətinin WhatsApp limitlərinə uyğun tənzimlənməsi (bloklanmanın qarşısını almaq üçün)",
+        "Göndərilmiş/uğursuz mesajların sadə hesabatı"
+      ],
+      "detailsEn": [
+        "Bulk sending through the WhatsApp Business API",
+        "Automatic import of customer data from an Excel/CSV list",
+        "Template variables that auto-fill personal fields like name or order number",
+        "Send-rate throttling tuned to WhatsApp's limits to avoid getting blocked",
+        "A simple report of delivered vs. failed messages"
+      ]
     },
     {
+      "slug": "meta-reporting",
       "titleAz": "Meta Reporting — Reklam Hesabat Sistemi",
       "titleEn": "Meta Reporting — Ad Reporting System",
       "tags": [
@@ -64,9 +82,14 @@
         "Dashboard"
       ],
       "image": null,
-      "full": false
+      "full": false,
+      "summaryAz": "",
+      "summaryEn": "",
+      "detailsAz": [],
+      "detailsEn": []
     },
     {
+      "slug": "erp-crm",
       "titleAz": "ERP–CRM — Biznes İdarəetmə Sistemi",
       "titleEn": "ERP–CRM — Business Management System",
       "tags": [
@@ -75,7 +98,11 @@
         "Full-stack"
       ],
       "image": null,
-      "full": true
+      "full": true,
+      "summaryAz": "",
+      "summaryEn": "",
+      "detailsAz": [],
+      "detailsEn": []
     }
   ],
   "experience": [

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useT } from "@/lib/lang-context";
 import { Container } from "./Container";
 import type { SiteContent } from "@/lib/content";
@@ -19,9 +20,10 @@ export function Work({ content }: { content: SiteContent }) {
 
       <div className="relative grid grid-cols-1 gap-7 sm:grid-cols-2">
         {content.projects.map((p, i) => (
-          <article
+          <Link
             key={i}
-            className={`flex flex-col gap-0 rounded-2xl border border-card-border bg-card p-[14px] ${
+            href={`/isler/${p.slug}`}
+            className={`group flex flex-col gap-0 rounded-2xl border border-card-border bg-card p-[14px] transition-shadow hover:shadow-[0_20px_45px_rgba(26,25,24,0.12)] ${
               p.full ? "sm:col-span-2" : ""
             }`}
           >
@@ -35,14 +37,19 @@ export function Work({ content }: { content: SiteContent }) {
                 <img
                   src={p.image}
                   alt={t(p.titleAz, p.titleEn)}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               ) : (
                 t("Şəkil admin paneldən əlavə edilə bilər", "Image can be added from admin panel")
               )}
             </div>
             <div className="flex flex-col gap-[14px] px-3 pt-[22px] pb-3">
-              <h3 className="text-[23px] font-semibold">{t(p.titleAz, p.titleEn)}</h3>
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-[23px] font-semibold">{t(p.titleAz, p.titleEn)}</h3>
+                <span className="flex-shrink-0 text-xl text-ink-tertiary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                  ↗
+                </span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((tag) => (
                   <span
@@ -54,7 +61,7 @@ export function Work({ content }: { content: SiteContent }) {
                 ))}
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </Container>

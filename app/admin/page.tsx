@@ -266,6 +266,61 @@ export default function AdminDashboard() {
                   }}
                 />
               </div>
+              <div className="mt-3">
+                <Field
+                  label="Slug (linkdə görünür: /isler/...)"
+                  value={p.slug}
+                  onChange={(v) => {
+                    const next = [...content.projects];
+                    next[i] = { ...p, slug: v };
+                    update("projects", next);
+                  }}
+                />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-4">
+                <Field
+                  label="Qısa təsvir / summary (AZ)"
+                  textarea
+                  value={p.summaryAz}
+                  onChange={(v) => {
+                    const next = [...content.projects];
+                    next[i] = { ...p, summaryAz: v };
+                    update("projects", next);
+                  }}
+                />
+                <Field
+                  label="Qısa təsvir / summary (EN)"
+                  textarea
+                  value={p.summaryEn}
+                  onChange={(v) => {
+                    const next = [...content.projects];
+                    next[i] = { ...p, summaryEn: v };
+                    update("projects", next);
+                  }}
+                />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-4">
+                <Field
+                  label="Nə etdik (AZ) — hər sətir ayrı bənd"
+                  textarea
+                  value={p.detailsAz.join("\n")}
+                  onChange={(v) => {
+                    const next = [...content.projects];
+                    next[i] = { ...p, detailsAz: v.split("\n").map((s) => s.trim()).filter(Boolean) };
+                    update("projects", next);
+                  }}
+                />
+                <Field
+                  label="What we built (EN) — one line per bullet"
+                  textarea
+                  value={p.detailsEn.join("\n")}
+                  onChange={(v) => {
+                    const next = [...content.projects];
+                    next[i] = { ...p, detailsEn: v.split("\n").map((s) => s.trim()).filter(Boolean) };
+                    update("projects", next);
+                  }}
+                />
+              </div>
               <div className="mt-3 flex items-center justify-between">
                 <label className="flex items-center gap-2 text-sm">
                   <input
@@ -292,7 +347,18 @@ export default function AdminDashboard() {
             onClick={() =>
               update("projects", [
                 ...content.projects,
-                { titleAz: "", titleEn: "", tags: [], image: null, full: false },
+                {
+                  slug: `layihe-${content.projects.length + 1}`,
+                  titleAz: "",
+                  titleEn: "",
+                  tags: [],
+                  image: null,
+                  full: false,
+                  summaryAz: "",
+                  summaryEn: "",
+                  detailsAz: [],
+                  detailsEn: [],
+                },
               ])
             }
             className="self-start rounded-lg border border-dashed border-[#DEDCD6] px-4 py-2 text-sm text-[#6B6862] hover:bg-[#F4F3F0]"

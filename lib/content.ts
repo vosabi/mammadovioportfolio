@@ -24,11 +24,16 @@ export type Service = {
 };
 
 export type Project = {
+  slug: string;
   titleAz: string;
   titleEn: string;
   tags: string[];
   image: string | null;
   full: boolean;
+  summaryAz: string;
+  summaryEn: string;
+  detailsAz: string[];
+  detailsEn: string[];
 };
 
 export type ExperienceEntry = {
@@ -65,17 +70,45 @@ export type SiteContent = {
   };
 };
 
+function slugify(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[əğıöşü]/g, (c) => ({ ə: "e", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u" })[c] || c)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// Older content.json files (saved before these fields existed) won't have
+// slug/summary/details — backfill so pages don't break on missing data.
+function normalizeContent(content: SiteContent): SiteContent {
+  const used = new Set<string>();
+  content.projects = content.projects.map((p) => {
+    let slug = p.slug || slugify(p.titleAz || p.titleEn || "layihe");
+    while (used.has(slug)) slug = `${slug}-2`;
+    used.add(slug);
+    return {
+      ...p,
+      slug,
+      summaryAz: p.summaryAz ?? "",
+      summaryEn: p.summaryEn ?? "",
+      detailsAz: p.detailsAz ?? [],
+      detailsEn: p.detailsEn ?? [],
+    };
+  });
+  return content;
+}
+
 export async function getContent(): Promise<SiteContent> {
   try {
     const raw = await readFile(CONTENT_PATH, "utf-8");
-    return JSON.parse(raw) as SiteContent;
+    return normalizeContent(JSON.parse(raw) as SiteContent);
   } catch {
     // First run against a fresh persistent dir: seed it from the repo's
     // bundled default so the site isn't blank before any admin edit.
     const seedRaw = await readFile(SEED_PATH, "utf-8");
     await mkdir(PERSIST_ROOT, { recursive: true });
     await writeFile(CONTENT_PATH, seedRaw, "utf-8");
-    return JSON.parse(seedRaw) as SiteContent;
+    return normalizeContent(JSON.parse(seedRaw) as SiteContent);
   }
 }
 

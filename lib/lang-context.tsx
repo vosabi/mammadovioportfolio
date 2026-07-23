@@ -44,5 +44,5 @@ export function useLang() {
 
 export function useT() {
   const { lang } = useLang();
-  return (az: string, en: string) => (lang === "az" ? az : en);
+  return <T,>(az: T, en: T) => (lang === "az" ? az : en);
 }
